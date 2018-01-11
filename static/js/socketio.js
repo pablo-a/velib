@@ -16,11 +16,15 @@ $(document).ready(function() {
     // activate when a chunk of data is sent by server.
     socket.on("chunck_sent", function(data) {
         // console.log(data)
-        // heatmap.setMap(null)
-        heatmap = new google.maps.visualization.HeatmapLayer({
-          data: convert_chunk(JSON.parse(data)),
+
+        velibLst = JSON.parse(data)
+        $("#datetime").text(velibLst[0]['date_extract'])
+        heatmapLayerList[currentHeatMapLayer] = new google.maps.visualization.HeatmapLayer({
+          data: convert_chunk(velibLst),
           map: map
         });
+        if currentHeatMapLayer > HeatMapLayersInDisplay:
+            heatmapLayerList[currentHeatMapLayer - HeatMapLayersInDisplay].setMap(null)
     });
 })
 

@@ -1,6 +1,10 @@
 var map, heatmap;
 
 function initMap() {
+    // global variables we'll need for display (in socketio.js)
+    currentHeatMapLayer = 0
+    HeatMapLayersInDisplay = 5
+
     map = new google.maps.Map(document.getElementById('map'), {
       zoom: 13,
       center: {lat: 48.8534, lng: 2.3488},
