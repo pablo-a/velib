@@ -12,7 +12,7 @@ $(document).ready(function() {
         });
     }
 
-    var interval = 1000 * 5; // 1 minute interval
+    var interval = 1000 * 10; // 10 seconds interval
 
     setInterval(ajax_call, interval);
 
