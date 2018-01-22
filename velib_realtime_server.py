@@ -19,20 +19,22 @@ def background_thread():
     # fetch data from api
     # store it on DB
     # emit data to client
-    socket.emit('realtime_data', dict(foo='bar'))
+    socketio.emit('realtime_data', dict(foo='bar'))
 
+# perform task, then when 1 minute as long as server us running.
 def listen():
     while True:
         background_thread()
-        eventlet.sleep(60)
+        eventlet.sleep(5)
 
 eventlet.spawn(listen)
 
-@socketio.on('load_data')
-def feed_data(message):
-    print("streaming & processing database")
-    velib_model.send_data_to_client(message)
-    print("streaming over")
+
+# @socketio.on('load_data')
+# def feed_data(message):
+#     print("streaming & processing database")
+#     velib_model.send_data_to_client(message)
+#     print("streaming over")
 
 
 
