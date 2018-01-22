@@ -10,6 +10,7 @@ simplejson = "*"
 eventlet = "*"
 flask = "*"
 "flask-socketio" = "*"
+requests = "*"
 
 
 [dev-packages]
