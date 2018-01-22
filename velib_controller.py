@@ -22,4 +22,4 @@ def feed_data(message):
 
 if __name__ == '__main__':
     print("Hello World")
-    socketio.run(app)
+    socketio.run(app, host= '0.0.0.0')
