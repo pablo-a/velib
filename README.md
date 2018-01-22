@@ -3,6 +3,6 @@
 Paris has a new bike sharing system since early 2018. We gather data from its public API to be able to visualize it.
 
 This software contains utility for :
-- fetching real time velib data from their API (Python)
-- A Web server that synchronize the front with new data.
+- A Web server that fetch data, store it & sync client.
+- The sync with client is made using a websocket.
 - displaying it in real time with google maps & heatmap layers (HTML, CSS, JS)
