@@ -1,5 +1,7 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO, emit
+import eventlet
+eventlet.monkey_patch()
 
 
 app = Flask(__name__)
@@ -10,6 +12,21 @@ socketio = SocketIO(app)
 @app.route('/')
 def index():
     return render_template('velib_view.html')
+
+
+def background_thread():
+    # TODO:
+    # fetch data from api
+    # store it on DB
+    # emit data to client
+    socket.emit('realtime_data', dict(foo='bar'))
+
+def listen():
+    while True:
+        background_thread()
+        eventlet.sleep(60)
+
+eventlet.spawn(listen)
 
 @socketio.on('load_data')
 def feed_data(message):
