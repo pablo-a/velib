@@ -13,6 +13,9 @@ jupyter = "*"
 pymysql = "*"
 simplejson = "*"
 impyla = "*"
+six = "*"
+"bit-array" = "*"
+thriftpy = "*"
 
 
 [dev-packages]
