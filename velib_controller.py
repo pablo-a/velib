@@ -11,6 +11,11 @@ socketio = SocketIO(app)
 @app.route('/')
 def index():
     print("user connected")
+    return render_template('index.html')
+
+@app.route('/flux/')
+def flux():
+    print("user connected")
     return render_template('velib_view.html')
 
 @socketio.on('load_data')
