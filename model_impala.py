@@ -17,6 +17,7 @@ def sql_chunck_gene(bdd, chunk_size, start, end):
     FROM velib_data WHERE date_extract > %s AND date_extract < %s
     ORDER BY date_extract LIMIT 10000000"""
     params = (start, end)
+    print(req % params)
     cursor.execute(req, params)
     print("Query on database is executed. Stream of data begins.")
 
