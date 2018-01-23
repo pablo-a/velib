@@ -16,8 +16,8 @@ def index():
 @socketio.on('load_data')
 def feed_data(message):
     print("streaming & processing database")
-    velib_model.send_data_to_client(socketio, message)
-    # model_impala.send_data_to_client(socketio, message)
+    # velib_model.send_data_to_client(socketio, message)
+    model_impala.send_data_to_client(socketio, message)
     print("streaming over")
 
 

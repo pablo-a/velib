@@ -27,7 +27,6 @@ def sql_chunck_gene(bdd, chunk_size, start, end):
         yield data
 
 def send_data_to_client(socketio, message):
-    eventlet.monkey_patch()
     # Connect to the impala database when needed.
     bdd = connect(host='167.114.235.165', port=21050)
     print("Database connection is done")

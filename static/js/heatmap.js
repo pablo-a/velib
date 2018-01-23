@@ -3,7 +3,7 @@ var map, heatmap;
 function initMap() {
     // global variables we'll need for display (in socketio.js)
     currentHeatMapLayer = 0
-    heatMapLayersInDisplay = 5
+    heatMapLayersInDisplay = 6
     heatmapLayerList = []
 
     map = new google.maps.Map(document.getElementById('map'), {
