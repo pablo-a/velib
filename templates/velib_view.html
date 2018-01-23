@@ -12,15 +12,26 @@
     <script src="{{ url_for('static', filename='js/socketio.js') }}" charset="utf-8"></script>
     <!-- heatmap.js -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/heatmap.js') }}"></script>
+
+    <!-- scripts for display a date range picker -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 </head>
 <body>
     <!-- HTML part -->
-    <h1>Velib' bikes flux visualization</h1>
+    <h1>Velib' bikes flux visualization (<a href="/">see real time</a>)</h1>
+    <input type="text" name="daterange" value="2018/01/20 - 2018/02/01" />
     <button type="button" name="button" id="button">load dynamic map</button>
+    <br>
     <span>Current Date and Time : </span> <span id="datetime"></span>
     <div id="map"></div>
 
     <!-- scripts -->
+    <script type="text/javascript">
+
+    </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeMLsnT0C43lw_8ahFoi2yZNmoIezCyAk&libraries=visualization&callback=initMap"></script>
 </body>
 </html>

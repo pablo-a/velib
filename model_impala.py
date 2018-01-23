@@ -14,7 +14,8 @@ def sql_chunck_gene(bdd, chunk_size, start, end):
     print("Cursor created. Execute query on database.")
     # TODO: remove limit 10000 in query
     req = """SELECT latitude, longitude, available_bikes, date_extract
-    FROM velib_data ORDER BY date_extract LIMIT 1000000"""
+    FROM velib_data WHERE date_extract > %s AND date_extract < %s
+    ORDER BY date_extract LIMIT 10000000"""
     params = (start, end)
     cursor.execute(req, params)
     print("Query on database is executed. Stream of data begins.")

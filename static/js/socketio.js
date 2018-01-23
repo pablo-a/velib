@@ -9,7 +9,19 @@ $(document).ready(function() {
         $('#receiver').text(message['data']);
     });
 
+    // date picker
+    start = "2018-01-20"
+    end = "2018-02-10"
+    $('input[name="daterange"]').daterangepicker(
+        { locale: {format: 'YYYY-MM-DD'}},
+        function(start, end, label) {
+        start = start.format('YYYY-MM-DD')
+        end = end.format('YYYY-MM-DD')
+    });
+
     $('#button').bind('click', function() {
+        console.log(start)
+        console.log(end)
         socket.emit("load_data", {data: "gimme data", start:"20170705", end:"20170805"});
     });
 
