@@ -38,7 +38,7 @@ def find_stop_index(current_time, lst):
             current_index = (current_index * 3) // 2
     return current_index
 
-def send_data_to_client(message):
+def send_data_to_client(socketio, message):
     # Connect to the database when needed.
     bdd = pymysql.connect(host='159.8.71.154', user='Pablo', password='Tz@42U_5v',
                 db='pablo', charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
@@ -56,6 +56,7 @@ def send_data_to_client(message):
             # add the good part & send it
             current_data += chunck[:stop_index]
             emit("chunck_sent", json_dumps(current_data))
+            socketio.sleep(0.5)
 
             # set new list of data
             current_time = chunck[stop_index]['date_extract']
