@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Flask-SocketIO Test</title>
+    <title>Velib' visualisation</title>
     <!-- jquery -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
     <!-- socketio -->
@@ -20,12 +20,25 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 </head>
 <body>
-    <!-- HTML part -->
-    <h1>Velib' bikes flux visualization (<a href="/">see real time</a>)</h1>
-    <input type="text" name="daterange" value="2018/01/20 - 2018/02/01" />
-    <button type="button" name="button" id="button">load dynamic map</button>
+    <!-- nav bar -->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Velib boys</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="/">Real time</a></li>
+          <li class="active"><a href="/flux">Flux</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Body -->
+    <h1>Velib' bikes flux visualization</h1><br>
+    <h4 class="mx-auto">Pick a date range : 2 weeks max between july 2017 and december 2017 : </h4>
+    <input type="text" class="mx-auto" name="daterange" value="2018/01/20 - 2018/02/01" /><br>
+    <br><button type="button" name="button" id="button" class="btn btn-success mx-auto">load dynamic map</button>
     <br>
-    <span>Current Date and Time : </span> <span id="datetime"></span>
+    <h3><span>Current Date and Time : </span> <span id="datetime"></span></h3>
     <div id="map"></div>
 
     <!-- scripts -->

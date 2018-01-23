@@ -15,7 +15,7 @@ def sql_chunck_gene(bdd, chunk_size, start, end):
     # TODO: remove limit 10000 in query
     req = """SELECT latitude, longitude, available_bikes, date_extract
     FROM velib_data WHERE date_extract > %s AND date_extract < %s
-    ORDER BY date_extract LIMIT 10000000"""
+    ORDER BY date_extract"""
     params = (start, end)
     print(req % params)
     cursor.execute(req, params)

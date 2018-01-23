@@ -1,20 +1,33 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Where are velibs ?</title>
+    <title>Velib' visualisation</title>
     <!-- jquery -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
     <!-- css file -->
     <link rel="stylesheet" href="{{ url_for('static',filename='styles/heatmap.css') }}">
     <!-- heatmap_index.js -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/heatmap_index.js') }}"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
 </head>
 <body>
+    <!-- nav bar -->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Velib boys</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Real time</a></li>
+          <li><a href="/flux">Flux</a></li>
+        </ul>
+      </div>
+    </nav>
     <!-- HTML part -->
-    <h1>Real Time visualisation of Velibs bikes in Paris. (<a href="/flux">see velib flux</a>)</h1>
+    <h1>Real Time visualisation of Velibs bikes in Paris.</h1>
     <br>
-    <br>
-    <h3>Wait a few seconds to see the realtime map.</h3>
+    <h4>Wait a few seconds for loading real time data.</h4>
 
     <!-- the div is a container for google map -->
     <div id="map"></div>
