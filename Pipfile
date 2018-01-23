@@ -12,6 +12,7 @@ pipenv = "*"
 jupyter = "*"
 pymysql = "*"
 simplejson = "*"
+impyla = "*"
 
 
 [dev-packages]
