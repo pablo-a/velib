@@ -15,7 +15,6 @@ $(document).ready(function() {
 
     // activate when a chunk of data is sent by server.
     socket.on("chunck_sent", function(data) {
-        // console.log(data)
         heatmap.setMap(null)
         velibLst = JSON.parse(data)
         $("#datetime").text(velibLst[0]['date_extract'])
